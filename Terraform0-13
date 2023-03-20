@@ -16,7 +16,7 @@ provider "aws" {
 resource "aws_vpc" "example" {
   cidr_block = "10.0.0.0/16"
 }
-Terraform 0.12 and earlier:
+#Terraform 0.12 and earlier:
 
 # Configure the AWS Provider
 provider "aws" {
