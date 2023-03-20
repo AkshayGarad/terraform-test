@@ -1,0 +1,18 @@
+# Terraform 0.12 and later syntax
+variable "additional_tags" {
+  default     = {}
+  description = "Additional resource tags"
+  type        = map(string)
+}
+
+resource "aws_vpc" "example" {
+  # ... other configuration ...
+
+  # This configuration combines some "default" tags with optionally provided additional tags
+  tags = merge(
+    var.additional_tags,
+    {
+      Name = "MyVPC"
+    },
+  )
+}
